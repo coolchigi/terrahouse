@@ -62,3 +62,27 @@ If you want to persist env vars, you need to set env vars in the bash profile eg
     gp env AWS_KEY='sxxx
     ```
     - You can also set it in `.gitpod.yml`
+
+
+### AWS CLI Installation
+AWS CLI is installed for this project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+[Getting Started Install (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+[AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+#### Check Whether You Have Configured AWS Credentials
+```sh
+aws sts get-caller-identity
+```
+If successful, you should see a json response
+```json
+
+{
+    "UserId": "AIDAU5CH6DL4E7WEESDS",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/xx"
+}
+
+```
+- Remember to generate AWS CLI credentials from IAM user in order to use AWS CLI
